@@ -1,0 +1,25 @@
+--Create a clothing shop database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, stock INTEGER, aisle INTEGER);
+
+INSERT INTO store VALUES 
+(1, "Men T-shirt", 19, 20, 4),
+(2, "Men V-Neck", 15, 8, 4),
+(3, "Men Jeans", 49, 17, 8),
+(4, "Men Shorts", 24, 46, 6),
+(5, "Men Dress Pants", 59, 5, 8),
+(6, "Men Underwear", 9, 21, 2),
+(7, "Women T-shirt", 19, 20, 3),
+(8, "Women V-Neck", 15, 8, 3),
+(9, "Women Jeans", 49, 17, 7),
+(10, "Women Shorts", 24, 46, 5),
+(11, "Women Dress Pants", 59, 5, 7),
+(12, "Women Underwear", 9, 21, 1),
+(13, "Women Bra", 17, 21, 1),
+(14, "Women Dress Shirt", 35, 11, 3),
+(15, "Men Dress Shirt", 39, 10, 4);
+
+--Display the database ordered by price and grouped by aisle.
+
+SELECT * FROM store ORDER BY price desc;
+SELECT aisle, SUM(stock) FROM store GROUP BY aisle;
